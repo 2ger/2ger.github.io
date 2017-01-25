@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
+    
+    <title>iFlytek Web Api</title>
+    <meta http-equiv="keywords" content="free mobile website templates, free mobile website template, free iphone template, free android template, free high end touch mobile templates, free high end touch mobile template">
+    <meta http-equiv="description" content="Get free mobile website templates for Iphone , Android and High end touch mobile devices">
+    <link href="./css/style.css" rel="stylesheet" type="text/css">
+    <script src="./js/jquery.min.js"></script>
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+<body>
+	<div id="header">
+        <div class="nav">
+        	<ul>
+                <li><a href="">语音播放</a></li>
+                <li><a href="">录音软件下载</a></li>
+				<li><a href="">如何录电脑的声音</a></li>
+                <li><a href="">视频软件下载</a></li>
+            </ul>
+        </div>
+        <div class="logo"><a href=""><img src="./images/logo.png" alt="Company Logo - voicecloud.cn"></a></div>
+    </div>
+    <div class="clear"></div>
+
+<!-- TODO
+添加后，然后下拉换人
+自动播下一条 -->
+
+<div class="well">
+    <div class="row">
+        <div class="col-sm-6">
+            <a  class="btn btn-lg btn-success addman">添加男声</a>   
+            <a  class="btn btn-lg btn-primary addwoman">添加女声</a>  
+        </div>
+        <div class="col-sm-6">
+            
+                <select id="vcn" class="btn btn-default  btn-lg">
+                    <option value="xiaoyu">青年男声，普通话</option>
+                    <option value="xiaoyan">青年女声，普通话</option>
+                    <option value="vixy">小燕，普通话</option>
+                    <option value="vils">老孙 （普通话）</option>
+
+                    <option value="Catherine">----英文---</option>
+                    <option value="Catherine">英文女声</option>
+                    <option value="henry">英文男声</option>
+
+                    <option value="vixm">-----地方话-----</option>
+
+                    <option value="vixm">小梅，粤语</option>
+                    <option value="vixl">小莉，台湾普通话</option>
+                    <option value="vixr">小蓉，四川话</option>
+                    <option value="vixyun">小芸，东北话</option>
+                    <option value="vixqa">小强 （湖南话）</option>
+                    <option value="vixk">小坤（河南话）</option>
+                    <option value="vixying">小莹 （陕西话） </option>
+
+                    <option value="vixx">-----特色-----</option>
+                    <option value="vixx">小新，童年男声</option>
+                    <option value="vinn">楠楠，童年女声</option>
+                </select>
+
+
+                 <select id="spd" class="btn btn-default  btn-lg">
+                    <option value="100">语速</option>
+                  <!--   <option value="20">慢</option>
+                    <option value="50">medium</option>
+                    <option value="70">fast</option>
+                    <option value="200">x-fast</option> -->
+                </select>
+                <a  class="btn btn-info addx  btn-lg" > 添加</a>
+             
+          </div><!-- /.col-lg-6 -->
+
+        </div>
+    </div>
+
+</div>
+
+<style>
+    .input-group{margin-bottom:20px;}
+</style>
+<div class="row">
+  <div class="col-lg-12 list">
+
+    <div class="input-group">
+      <span class="input-group-btn play">
+        <button class="btn btn-success " type="button">播放</button>
+      </span>
+      <span class="input-group-addon" people="viviyufeng">男</span>
+      <input type="text" class="form-control" value="你好呀"  id="content">
+      <span class="input-group-btn delete"><button class="btn btn-danger " type="button">删</button></span>
+    </div><!-- /input-group -->
+ 
+
+  </div><!-- /.col-lg-12 -->
+
+ 
+</div><!-- /.row -->
+
+    <script type="text/javascript" src="./js/fingerprint.js"></script>
+    <script type="text/javascript" src="./js/tts.min.js"></script>
+    <script type="text/javascript" src="./js/tts_demo.js"></script>
+
+
+<script>
+$(".addx").click(function(){
+    
+    var people=$('#vcn').val();
+    var people2=$('#vcn option:selected').text();
+    var spd = $('#spd').val();
+    console.log("添加"+people+"/速度"+spd);
+    var man = '<div class="input-group"><span class="input-group-btn play">        <button class="btn btn-info " type="button">播放</button>      </span>     <span class="input-group-addon" people="'+people+'" spd="'+spd+'">'+people2+'</span>   <input type="text" class="form-control" value="你好呀">     <span class="input-group-btn delete"><button class="btn btn-danger " type="button">删</button></span>   </div>';
+    $(".list").append(man);
+})
+
+
+$(".addman").click(function(){
+    console.log("添加");
+    var man = '<div class="input-group"><span class="input-group-btn play">        <button class="btn btn-success " type="button">播放</button>      </span>     <span class="input-group-addon" people="viviyufeng">男</span>   <input type="text" class="form-control" value="你好呀">     <span class="input-group-btn delete"><button class="btn btn-danger " type="button">删</button></span>   </div>';
+    $(".list").append(man);
+})
+
+$(".addwoman").click(function(){
+    console.log("添加");
+    var man = '<div class="input-group"><span class="input-group-btn play">        <button class="btn btn-primary " type="button">播放</button>      </span>    <span class="input-group-addon" people="aisxping">女</span>    <input type="text" class="form-control" value="我很好" >      <span class="input-group-btn delete"><button class="btn btn-danger " type="button">删</button></span>  </div>';
+    $(".list").append(man);
+})
+
+// $(".delete").click(function(){
+$(".row").on("click",".delete",function(){
+    $(this).parent().remove();
+})
+
+ $(".row").on("click",".play",function(){
+    console.log("对话开始");
+    $(this).children().addClass("btn-danger");
+    var vcn =  $(this).next().attr('people');
+    var spd =  $(this).next().attr('spd');
+    var content =  $(this).next().next().val();
+    console.log("获取内容："+content+" \n说话人："+vcn+" \n速度："+spd);
+    // play(text, people ,spd);
+
+         var obj2 = $(this);
+
+
+    reset();
+    if(spd ==undefined){
+        spd=50;
+    }
+
+    ssb_param = {"appid": '56e68961', "appkey":"4f120dad94ab69c2", "synid":"12345", "params" : "ent=aisound,aue=lame,spd=mediummedium,vcn="+vcn+",spd="+spd};
+
+    session.start(ssb_param, content, function (err, obj)
+    {
+
+        var audio_url = audioPalyUrl + obj.audio_url;
+        if( audio_url != null && audio_url != undefined )
+        {
+            window.iaudio.src = audio_url;
+            window.iaudio.play();
+        }
+
+         console.log("-----说完本句-----");
+         // playNext(obj2);
+         // window.setTimeout(playNext(obj2), 3000);
+    });
+
+
+  
+ })
+
+ function playNext(obj){
+     console.log("----------------下一句-------------");
+     var next = obj.parent().next().children().next();
+    var people1 =  next.attr('people');
+    var text1 =  next.next().val();
+    console.log("获取内容："+text1+" \n说话人："+people1);
+    if( text1 != undefined){
+        console.log("说下一句");
+
+    }else{
+        console.log("-----对话结束-----");
+    }
+    // window.setTimeout(play(text1, people1), 1000);
+    // play(text1, people1);
+ }
+</script>
+</body></html>
