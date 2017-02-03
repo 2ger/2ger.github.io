@@ -11,7 +11,8 @@ body {
   font-size: 1.16em;
   font-family: 'Lato', Calibri, Arial, sans-serif;
 }
-
+.things {font-size:1.16em;font-weight:700}
+a{color:#000;text-decoration:none;cursor:pointer}
 .point-time {
   content: "";
   position: absolute;
@@ -25,24 +26,39 @@ body {
   box-shadow: 0 0 0 5px #fff;
 }
 
-.text-red {
-  color: #f6393f;
+.red .text {
+  color: #f6393f!important;
+}
+.red .point-time{
+  background:#f6393f!important;
 }
 
-.text-blue {
-  color: #1c87bf;
+.blue .text {
+  color: #1c87bf!important;
+}
+.blue .point-time{
+  background:#1c87bf!important;
 }
 
-.text-green {
-  color: #95c91e;
+.green .text {
+  color: #95c91e!important;
+}
+.green .point-time{
+  background:#95c91e!important;
 }
 
-.text-yellow {
-  color: #ffb902;
+.yellow .text {
+  color: #ffb902!important;
+}
+.yellow .point-time{
+  background:#ffb902!important;
 }
 
-.text-purple {
-  color: #d32d93;
+.purple .text {
+  color: #d32d93!important;
+}
+.purple .point-time{
+  background:#d32d93!important;
 }
 
 .point-red {

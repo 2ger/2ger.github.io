@@ -2,66 +2,103 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>每年12项科研产品计划</title>
+<title>科学研究：每年12项产品计划</title>
 <link rel="stylesheet" type="text/css" href="css/timeline.css">
+<base target="_blank"/>
+	<!-- Add jQuery library -->
+	<script type="text/javascript" src="fancyBox/lib/jquery-1.10.2.min.js"></script>
+	<!-- Add fancyBox main JS and CSS files -->
+	<script type="text/javascript" src="fancyBox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+	<link rel="stylesheet" type="text/css" href="fancyBox/source/jquery.fancybox.css?v=2.1.5" media="screen" />
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("a").click(function() {
+                var url = $(this).attr("url");
+				$.fancybox.open({
+					href :url,
+                    width:1200,
+					type : 'iframe',
+					padding : 5
+				});
+			});
+		});
+	</script>
+
 </head>
 <body>
 <div class="content">
 
-    <article>
-		<h3>2017</h3>
-
+    <article class="red">
+		<h3>2017 共1个</h3>
 		<section>
-			<span class="point-time point-green"></span>
+			<span class="point-time"></span>
 			<time datetime="2013-03">
 				<span>莫深辰</span>
 				<span>1-25</span>
 			</time>
 			<aside>
-				<p class="things">讯飞语音合成 V2 对话版 </p>
-				<p class="brief"><span class="text-green">语音合成并下载为mp3，支持选发音人、语速、中英文、自定义文字</span></p>
+                <p class="things"> 
+                <a url="2017/tts/tts.html"> 
+                    讯飞语音合成 V2 对话版 
+                </a>
+                </p>
+				<p class="brief"><span class="text">语音合成并下载为mp3，支持选发音人、语速、中英文、自定义文字</span></p>
 			</aside>
 		</section>
+        
 	</article>
-   <article>
-		<h3>2016</h3>
+   <article class="green">
+		<h3>2016 共1个</h3>
 
 		<section>
-			<span class="point-time point-yellow"></span>
+			<span class="point-time "></span>
 			<time datetime="2013-03">
 				<span>莫深辰</span>
 				<span>9-18</span>
 			</time>
 			<aside>
-				<p class="things">易伙加粉助手</p>
-				<p class="brief"><span class="text-yellow">支持城市分区、分类：老板、学生、微商</span></p>
+				<p class="things">
+                <a href="https://itunes.apple.com/cn/app/yi-huo-jia-fen-zhu-shou-yong/id1168554563?mt=8"> 
+                    易伙加粉助手
+                </a>
+                </p>
+				<p class="brief"><span class="text">支持城市分区、分类：老板、学生、微商</span></p>
 			</aside>
 		</section>
 	</article> 
-	<article>
-		<h3>2015</h3>
+	<article class="yellow">
+		<h3>2015 共1个</h3>
 
 		<section>
-			<span class="point-time point-red"></span>
+			<span class="point-time "></span>
 			<time datetime="2013-03">
 				<span>莫深辰</span>
 				<span>9-18</span>
 			</time>
 			<aside>
-				<p class="things">手机屏幕测试</p>
-				<p class="brief"><span class="text-red">不同分辨率测试</span></p>
+				<p class="things">
+                <a url="2015/mobile.html"> 
+                    手机屏幕测试
+                </a>
+                </p>
+				<p class="brief"><span class="text">不同分辨率测试</span></p>
 			</aside>
 		</section>
 
         <section>
-			<span class="point-time point-red"></span>
+			<span class="point-time "></span>
 			<time datetime="2013-03">
 				<span>莫深辰</span>
 				<span>9-17</span>
 			</time>
 			<aside>
-				<p class="things">讯飞语音合成 V1</p>
-				<p class="brief"><span class="text-red">语音合成并下载为mp3，支持选发音人、语速、中英文、自定义文字</span></p>
+				<p class="things">
+                <a url="2015/tts.html"> 
+                    讯飞语音合成 V1 mp3版（已失效）
+                </a>
+                </p>
+				<p class="brief"><span class="text">语音合成并下载为mp3，支持选发音人、语速、中英文、自定义文字</span></p>
 			</aside>
 		</section>
 	</article>
