@@ -33,8 +33,8 @@
 <div class="well">
     <div class="row">
         <div class="col-sm-6">
-            <a  class="btn btn-lg btn-danger addman"  people="aisxping">女声</a>
-            <a  class="btn btn-lg btn-success addman" people="xiaoyu">男声</a>
+            <a  class="btn btn-lg btn-danger addman"  people="aisxping" type="btn-warning">女声</a>
+            <a  class="btn btn-lg btn-success addman" people="xiaoyu"  type="btn-danger">男声</a>
             <a  class="btn btn-lg btn-danger addman"  people="vixr">四川 女声</a>
             <a  class="btn btn-lg btn-primary addman"  people="vixk">河南 男声</a>
         </div>
@@ -123,11 +123,16 @@ $(".addx").click(function(){
 
 $(".addman").click(function(){
     console.log("添加");
+    var btntype = $(this).attr('type');
+    console.log(btntype);
+    if(typeof(btntype) == "undefined"){
+    	btntype = "btn-info";
+    }
     var people = $(this).attr('people');
     var people2=$(this).text();
     var spd = $('#spd').val();
     console.log("添加"+people+"/速度"+spd);
-    var man = '<div><div class="input-group"><span class="input-group-btn play">        <button class="btn btn-info " type="button">播放</button>      </span>     <span class="input-group-addon" people="'+people+'" spd="'+spd+'">'+people2+'</span>   <input type="text" class="form-control" value="你好呀">     <span class="input-group-btn delete"><button class="btn btn-danger " type="button">删</button></span>   </div> <div></div></div>';
+    var man = '<div><div class="input-group"><span class="input-group-btn play">        <button class="btn '+btntype+' " type="button">播放</button>      </span>     <span class="input-group-addon" people="'+people+'" spd="'+spd+'">'+people2+'</span>   <input type="text" class="form-control" value="你好呀">     <span class="input-group-btn delete"><button class="btn btn-danger " type="button">删</button></span>   </div> <div></div></div>';
     $(".list").append(man);
 })
 
@@ -139,7 +144,7 @@ $(".row").on("click",".delete",function(){
 
  $(".row").on("click",".play",function(){
     console.log("对话开始");
-    $(this).children().addClass("btn-danger");
+    // $(this).children().addClass("btn-danger");
     var vcn =  $(this).next().attr('people');
     var spd =  $(this).next().attr('spd');
     var content =  $(this).next().next().val();
